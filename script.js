@@ -54,6 +54,7 @@ function soruGetir(){
     deger++;
     ids.innerText=siradakiSoruIds.id+"-";
     mevcutSoru.innerText=siradakiSoruIcerigi.title;
+
     let kelimeler = siradakiSoruIcerigi.title.split(" ");
     labelA.textContent = kelimeler[0];
     labelB.textContent = kelimeler[1];
@@ -62,6 +63,16 @@ function soruGetir(){
     countdown = 30;
     timer.textContent = countdown;
     timer.style.color = "black";
+
+    if(sira > 26) {
+      clearInterval(interval);
+      document.getElementById('results').style.display = 'block';
+        goruntulemeAlani.innerHTML = `
+            <h2>Sınavı tamamladınız</h2>
+            <button onclick="location.reload()">Yeniden Başla</button>
+            
+        `
+    }
 }
 function timeFonksiyon(){
 
@@ -140,11 +151,16 @@ gonderButonu.addEventListener('click', () =>{
 
   function displayResults() {
     const secilenMetin = secimiAl();
+
     let tableBody = document.getElementById('result-table').querySelector('tbody');
     for (let i = sira-1; i < sira; i++) {
         let row = tableBody.insertRow();
         let cell1 = row.insertCell(0);
-        cell1.textContent = secilenMetin;
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        cell1.textContent = deger;
+        cell2.textContent = mevcutSoru.textContent;
+        cell3.textContent = secilenMetin;
     }
 }
 

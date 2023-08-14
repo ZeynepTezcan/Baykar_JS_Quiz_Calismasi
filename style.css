@@ -10,16 +10,26 @@ body{
     display:flex;
     align-items: center;
     justify-content: center;
-    background-color: darkgray;
+    background-color: #897292;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     height: 100vh;
 }
+.time{
+    padding: 15px; 
+    background-color: #edc0ff;
+    width: 30%;
+    border-radius: 10px;
+}
+.timer{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
 #quiz{
-    width: 60rem;
+    width: 50rem;
     background-color: #ededed;
     border-radius: 10px;
-    box-shadow: 0 0 1rem 0.2rem #ededed;
     overflow: hidden;
 }
 .questions{
@@ -55,6 +65,10 @@ button{
     border: none;
     padding: 1rem;
     color: white;
+    width: 30%;
+    border-radius: 6px;
+    font-size: 20px ;
+    font-weight: 600;
 }
 button:hover{
     background-color: rgb(194, 72, 255);
